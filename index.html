@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Adjuster</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    label { display: block; margin-top: 10px; }
+    input, select { margin-bottom: 10px; padding: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #f4f4f4; }
+    .condition-select { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Property Adjuster</h1>
+
+  <label for="pdf-upload">Select 1–6 Comp PDFs:</label>
+  <input type="file" id="pdf-upload" accept="application/pdf" multiple />
+
+  <h2>Subject Property Info</h2>
+  <label>Square Footage: <input type="number" id="subject-sqft" required /></label>
+  <label>Year Built: <input type="number" id="subject-year" required /></label>
+  <label>Bedrooms: <input type="number" id="subject-beds" required /></label>
+  <label>Full Baths: <input type="number" id="subject-full" required /></label>
+  <label>Half Baths: <input type="number" id="subject-half" required /></label>
+  <label>Acreage: <input type="number" step="0.01" id="subject-acreage" required /></label>
+  <label>Finished Basement SqFt: <input type="number" id="subject-finish" required /></label>
+  <label>Garage Spaces: <input type="number" id="subject-garage" required /></label>
+  <label>Condition:
+    <select id="subject-condition">
+      <option value="0">Poor</option>
+      <option value="1">Fair</option>
+      <option value="2" selected>Average</option>
+      <option value="3">Good</option>
+      <option value="4">Excellent</option>
+    </select>
+  </label>
+
+  <h3>Comp Conditions</h3>
+  <div id="comp-condition-selectors"></div>
+
+  <button id="upload-btn">Upload & Adjust</button>
+
+  <div id="results"></div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
